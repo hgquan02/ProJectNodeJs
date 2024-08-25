@@ -1,0 +1,10 @@
+mixin aleart-error (time)
+  -if (messages.error)
+    .message.info 
+      div(
+        class = "aleart aleart-danger"
+        show aleart 
+        data-time = time 
+
+      ) #{message.error} <span close-aleart>x</span>
+

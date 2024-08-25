@@ -1,0 +1,111 @@
+extends ../../layouts/default.pug 
+include ../../mixins/aleart.pug 
+
+block main 
+  +aleart-error(5000)
+
+
+  h1(class="mb-4") Thêm mới sản phẩm 
+
+  form(
+    action =`${preFixAdmin}/products/create`
+    id="form-creat-product"
+    method="POST" 
+  )
+    div(class="form-group")
+      label(for="title") Tiêu đề
+      input(
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        required
+      )
+    div(class="form-group")
+      label(for="desc") Mô tả
+      textarea(
+        class="form-control"
+        id="desc"
+        rows="5"
+        name="description"
+      ) 
+    div(class="form-group")
+      label(for="title") Giá
+      input(
+        type="number"
+        class="form-control"
+        id="price"
+        name="price"
+        value="0"
+        min ="0"
+      )
+    div(class="form-group")
+      label(for="title") % Giảm giá
+      input(
+        type="number"
+        class="form-control"
+        id="discount"
+        name="discountPercentage"
+        value="0"
+        min ="0"
+      )
+    div(class="form-group")
+      label(for="title") Số lượng
+      input(
+        type="number"
+        class="form-control"
+        id="stock"
+        name="stock"
+        value="0"
+        min ="0"
+      )
+    div(class="form-group")
+      label(for="thumbnail") Ảnh
+      input(
+        type="text"
+        class="form-control"
+        id="thumbnail"
+        name="thumbnail"
+      )
+    div(class="form-group")
+      label(for="position") Vị trí
+      input(
+        type="number"
+        class="form-control"
+        id="position"
+        name="position"
+        placeholder="Tự động tăng"
+        min ="1"
+      )
+    div(class="form-group form-check form-check-inline")
+      input(
+        type="radio"
+        class="form-check-input"
+        id="statusActive"
+        name="status"
+        value="active"
+        checked
+      )
+      label(for="statusActive" class="form-check-label") Hoạt động
+
+    div(class="form-group form-check form-check-inline")
+      input(
+        type="radio"
+        class="form-check-input"
+        id="statusUnActive"
+        name="status"
+        value="unactive"
+        checked
+      )
+      label(for="statusUnActive" class="form-check-label") Dừng hoạt động
+
+    div(class="form-group")
+      button(
+        type="submit"
+        class="btn btn-primary"
+      ) Tạo mới
+    
+    
+
+
+  script(src="/admin/js/product.js") 
