@@ -135,3 +135,19 @@ if(showAlert){
   console.log(showAlert);
 }
 //end show-alert
+
+//upload anh
+const uploadImage = document.querySelector("[upload-image]");
+if(uploadImage) {
+  const uploadImageInput = document.querySelector("[upload-image-input]");
+  const uploadImageInputPreview = document.querySelector("[upload-image-preview]");
+
+  uploadImageInput.addEventListener("change", (e) => {
+    console.log(e);
+    const file = e.target.files[0];
+    if(file){
+      uploadImageInputPreview.src = URL.createObjectURL(file);
+    }
+  });
+}
+//end upload anh

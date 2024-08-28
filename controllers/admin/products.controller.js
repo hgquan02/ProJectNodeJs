@@ -118,7 +118,7 @@ module.exports.createPost = async (req, res) => {
   }else{
     req.body.position = parseInt(req.body.position);
   }
-
+  
   // Tạo mới 1 sản phẩm
   const product = new Product(req.body);
   //Lưu vào db
@@ -156,3 +156,5 @@ module.exports.detail = async (req, res) => {
     
   }
 };
+
+
