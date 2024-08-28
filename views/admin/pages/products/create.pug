@@ -11,6 +11,7 @@ block main
     action =`${preFixAdmin}/products/create`
     id="form-creat-product"
     method="POST" 
+    enctype = "multipart/form-data"
   )
     div(class="form-group")
       label(for="title") Tiêu đề
@@ -62,8 +63,8 @@ block main
     div(class="form-group")
       label(for="thumbnail") Ảnh
       input(
-        type="text"
-        class="form-control"
+        type="file"
+        class="form-control-file"
         id="thumbnail"
         name="thumbnail"
       )
@@ -105,7 +106,4 @@ block main
         class="btn btn-primary"
       ) Tạo mới
     
-    
-
-
   script(src="/admin/js/product.js") 
